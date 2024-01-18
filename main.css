@@ -1,0 +1,179 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+html {
+    overflow-x: hidden; /*Aqui definimos que em todo o HTML tudo que passa da tela na horizontal (eixo x) nao vai se definido*/
+}
+
+.container{
+    max-width: 1024px; /*tamanho da tela*/
+    width: 100%; /*quanto vai oculpar da tela*/
+    margin: 0 auto; /*centralizar*/
+}
+
+header, footer {
+    background-color: green;
+    padding-top: 16px; /*espaço somente na parte de cima da pagina*/
+    color: aliceblue;
+}
+
+header{ /*Aqui congelamos o cabeçalho da pagina no top e extrexa esqueda*/
+    position: sticky;
+    top: 0; /*congela no topo*/
+    left: 0; /*congela no esquerda*/
+    z-index: 1; /*por conta de um erro de concorrecia do que era para ser exibido colocamos essa tag para dar preferencia ao cabeçalho*/
+}
+
+/*Como temos dois containers nesse caso vamos selecionar o que esta dentro do header e para isso usamos o sinal de ">" veja abaixo*/
+
+header > .container,  /*selecionamos o container filho do header*/
+footer > .container { /*selecionamos o container filho do footer*/
+    justify-content: space-between; /*vai deixar o titulo na esquerda e o menu na direita*/
+    align-items: center; /*centraliza o menu na vertical*/
+    padding-bottom: 16px; /*espaço somente na parte de baixo da pagina*/
+}
+
+nav{
+    background-color: rgba(7, 255, 7, 0.616);
+    padding: 16px 0;
+    display: none; /*tiramos o menu nav para ser exibido somente quando clicar*/
+}
+
+nav li{
+    list-style: none;/*tira os topicos*/
+    display: inline; /*os link ficam um ao lado do outro*/
+    margin-right: 16px;/*margem a direita*/
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase/*deixa tudo MAIUSCULO*/;
+}
+
+nav li a{
+text-decoration: none; /*remove indeline do item <a> palavras do links*/
+color: aliceblue;
+}
+
+.menu-hamburguer {
+    width: 32px; /*tamanho do menu*/
+    cursor: pointer;
+}
+
+.menu-hamburguer span{
+    height: 2px;
+    width: 100%; /*o quanto vai oculpar dos 32px estipulado acima*/
+    background-color: aliceblue;
+    display: block;/*o span de padrão vem como inline ( - - -) iria ficar um do lado do outro entao mudamos para block*/
+    margin-bottom: 4px; /*vai fazer cada barrinha do menu ficar separa*/
+}
+
+.container-flex{
+    display: flex;
+}
+
+#sobre-a-loja img{ /*criamos esse ID para diminuir o tamanho da imagem da seção*/
+    max-width: 400px;
+    margin-right: 24px; /*Margin a direita da imagem*/
+}
+
+section { /*vamos deixar padra para todas as 'section'*/
+    padding: 48px 0; /*espaço de 48px em baixo e em cima na seção e na nadas nas laterais */
+}
+
+section h2{ /*aqui vamos deixar PADRÃO para TODOS os 'h2'*/
+    margin-bottom: 16px; /*Margem do titulo */
+}
+
+.lista-veiculos{
+    flex-wrap: wrap; /*Aqui definimos a quebra pagina, quando chega no fim da tela vai para linha de baixo*/
+} 
+
+.lista-veiculos li{
+    list-style: none; /*tira os topicos*/
+    max-width: 30%;
+    margin-bottom: 24px; /*Margem inferior de cada item*/
+}
+
+.lista-veiculos li img{
+    max-width: 100%; /*imagem vai oculpar 100% dos 30% que colocamos sem vazar do li*/
+}
+
+.lista-veiculos li h3{
+    margin: 16px 0;
+}
+
+.item-central {
+    margin: 0 5%; /*Aqui definimos 5% de margem em cada item direita e esquerda cada itemn oculpa 30% 30+30+30+5+5 = 100%*/
+}
+
+/*.slick-prev,
+.slick-arrow {
+    display: none;
+}*/
+
+button{
+    display: block;
+    width: 100%; /*vai ocupar 100% do container*/
+    padding: 8px 0;
+    border: none;
+    background-color: rgb(35, 35, 230);
+    color: aliceblue;
+    font-size: 16px;
+    font-weight: bold;/*deixa negrito*/
+    font-style: italic;/*deixa italico*/
+    cursor: pointer;
+    border-radius: 6px; /*borda arredondada*/
+}
+
+.price{
+    margin: 16px 0;
+    display: block;
+}
+
+.price del{
+    color: rgb(0, 4, 7);
+    background-color: red;
+    border-radius: 6px;
+    padding: 8px;
+}
+
+.form-campo{
+    margin-bottom: 16px; /*margem na parte baixo dos campos*/
+}
+
+.form-campo label{
+    font-weight: bold;
+    display: block; /*o form esta em line (campo ao lado do nome) mudamos para block (campo abaixo do nome)*/
+}
+
+.form-campo input,
+.form-campo textarea{
+    width: 100%; /*vai ocupar 100% do container*/
+    display: block;
+    padding: 8px;
+}
+
+.form-campo textarea {
+    resize: none; /*na caixa de texto essa tag fixa o tamanho da caixa para o usuario nao "quebrar a pagina"*/
+    height: 120px;
+}
+
+form{
+    max-width: 360px; /*aqui definimos o tamanho do MAXIMO do form*/
+}
+
+form button {
+    max-width: 120px;
+}
+
+footer li{
+    list-style: none; /*removendo os topicos */
+    margin-left: 16px; /*margem a esquerda*/
+}
+
+footer li img{
+    height: 32px; /*tamanho da imagem*/
+}
